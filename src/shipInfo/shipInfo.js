@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import './shipInfo.css';
-import history from '../services/history';
-import logos from '../assets/list.json';
 import NavBar from '../components/navbar';
 function ShipInfo(props) {
     const moviesQuery = gql`{
@@ -53,54 +51,54 @@ function ShipInfo(props) {
     console.log(movies.data);
     return (
         <div>
-        <NavBar/>
-        <div class="page">
-        <h2 class="display-3">Movies</h2>
-        <div className= "wrapper">
-        {movies.data.starship.filmConnection.edges.map((film)=>{
-          return(
-            <div class="card card-container">
-            <div class="card-body">
-              <h5 class="card-title">{film.node.title}</h5>
-            </div>
-              <img class="card-img-top img-container" src={require(`../assets/SW${film.node.episodeID}.jpg`)} />
-              <span class="card-body top-left">
-              <p class="card-text">Directed By: {film.node.director}</p>
-              <p class="card-text">Produced By: {film.node.producers.map((producer)=>{
-                return(
-                  producer + ", "
-                )
-              })}</p>
-              <p class="card-text">Released On: {film.node.releaseDate}</p>
-              </span>
-            </div>
-          )
-        })
-        }
+            <NavBar/>
+            <div className="page">
+                <h2 className="display-3">Movies</h2>
+                <div className= "wrapper">
+                    {movies.data.starship.filmConnection.edges.map((film)=>{
+                        return(
+                            <div className="card card-container">
+                                <div className="card-body">
+                                    <h5 className="card-title">{film.node.title}</h5>
+                                </div>
+                                <img className="card-img-top img-container" src={require(`../assets/SW${film.node.episodeID}.jpg`)} />
+                                <span className="card-body top-left">
+                                    <p className="card-text">Directed By: {film.node.director}</p>
+                                    <p className="card-text">Produced By: {film.node.producers.map((producer)=>{
+                                        return(
+                                            producer + ', '
+                                        );
+                                    })}</p>
+                                    <p className="card-text">Released On: {film.node.releaseDate}</p>
+                                </span>
+                            </div>
+                        );
+                    })
+                    }
 
-        </div>
-        <h2 class="display-3">Pilots</h2>
-        <div className= "wrapper">
-        {pilots.data.starship.pilotConnection.pilots.map((pilot)=>{
-          console.log(pilot)
-          return(
-            <div class="card card-container">
-              <div class="card-body">
-              <h5 class="card-title">{pilot.name}</h5>
-              <h6 class="card-title">Stats</h6>
-                <p class="card-text">Birth Year: {pilot.birthYear}</p>
-                <p class="card-text">Height: {pilot.height/100} m</p>
-                <p class="card-text">Weight: {pilot.mass} kg</p>
-                <p class="card-text">Gender: {pilot.gender}</p>
-                <p class="card-text">Species: {pilot.species ? pilot.species.name : "Human"}</p>
-                <p class="card-text">Homeworld: {pilot.homeworld.name}</p>
-              </div>
+                </div>
+                <h2 className="display-3">Pilots</h2>
+                <div className= "wrapper">
+                    {pilots.data.starship.pilotConnection.pilots.map((pilot)=>{
+                        console.log(pilot);
+                        return(
+                            <div className="card card-container">
+                                <div className="card-body">
+                                    <h5 className="card-title">{pilot.name}</h5>
+                                    <h6 className="card-title">Stats</h6>
+                                    <p className="card-text">Birth Year: {pilot.birthYear}</p>
+                                    <p className="card-text">Height: {pilot.height/100} m</p>
+                                    <p className="card-text">Weight: {pilot.mass} kg</p>
+                                    <p className="card-text">Gender: {pilot.gender}</p>
+                                    <p className="card-text">Species: {pilot.species ? pilot.species.name : 'Human'}</p>
+                                    <p className="card-text">Homeworld: {pilot.homeworld.name}</p>
+                                </div>
+                            </div>
+                        );
+                    })
+                    }
+                </div>
             </div>
-          )
-        })
-        }
-        </div>
-        </div>
         </div>
 
     );
