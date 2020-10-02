@@ -8,15 +8,15 @@ import './index.css';
 
 import { gql } from '@apollo/client';
 const client = new ApolloClient({
-  uri: 'https://swapibe.herokuapp.com/',
-  cache: new InMemoryCache(),
+    uri: 'https://swapibe.herokuapp.com/',
+    cache: new InMemoryCache(),
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-      <Router history={history}>
-          <Routes />
-      </Router>
+    <ApolloProvider client={client}>
+        <Router history={history}>
+            <Routes />
+        </Router>
     </ApolloProvider>,
     document.getElementById('root'),
 );

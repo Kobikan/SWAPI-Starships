@@ -1,0 +1,51 @@
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+body{
+  position: absolute;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.page {
+  margin-left: 5px;
+}
+.wrapper {
+  display: flex;
+  overflow: scroll;
+}
+.wrapper::-webkit-scrollbar{
+  display: none;
+}
+.card-container{
+  width: 25%;
+  flex: 0 0 auto;
+  margin-left: 2%;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow: hidden;
+  padding-left: 9px;
+  transition: max-height 500ms ease-in-out;
+}
+
+.card-container:hover{
+  box-shadow: 0 0 8px #d3d3d3;
+  cursor: pointer;
+  max-height: 550px;
+}
+.card-container:hover .img-container{
+  opacity: 0.2
+}
+.card-container:hover .top-left {
+  height: -webkit-fill-available;
+  position: absolute;
+  top: 40%;
+  transform: translate(0%, -25%);
+}
+.img-container{
+  width: 300px;
+  height: 500px;
+  object-fit: contain;
+}
