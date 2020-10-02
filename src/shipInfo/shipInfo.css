@@ -26,11 +26,10 @@ body {
   overflow-y:scroll;
   height: 99vh;
 }
-.layout::-webkit-scrollbar {
+.container::-webkit-scrollbar {
   display: none;
 }
 .card_layout{
-  width:30%;
-  margin: 1%;
-  cursor:hand;
+  width:22%;
+  margin: 1%
 }
