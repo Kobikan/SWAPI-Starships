@@ -19,7 +19,7 @@ export default function NavBar(props) {
                     <ul className="navbar-nav mr-auto">
                         <li className={props.link == 'home' ? 'nav-item active' : 'nav-item'}>
                             <a className="nav-link" href="" onClick = {() => {
-                                history.push('/home');
+                                history.push('/');
                             }}>Home <span className="sr-only">(current)</span></a>
                         </li>
                     </ul>

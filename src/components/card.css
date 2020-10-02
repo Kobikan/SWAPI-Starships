@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+overflow: scroll;
+}
+
+.wrapper::-webkit-scrollbar{
+  display: none;
+}
+
+.card-container{
+  width: 25%;
+  flex: 0 0 auto;
+  margin-left: 2%;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow: hidden;
+  padding: 2rem;
+  transition: max-height 500ms ease-in-out;
+}
+
+.card-container:hover{
+  box-shadow: 0 0 8px #d3d3d3;
+  cursor: pointer;
+  max-height: 500px;
+}
+
+.img-container{
+  max-height: 150px;
+}

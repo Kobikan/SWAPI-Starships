@@ -4,7 +4,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #ffeded, #ffffff);
+  background: linear-gradient(to bottom, #ffeded, #000000);
   min-height: 100%;
   min-width: 1024px;
 
@@ -17,8 +17,6 @@ body {
   top: 0;
   left: 0;
 }
-.home{
-}
 .layout{
   display: flex;
   flex-wrap: wrap;
@@ -29,8 +27,8 @@ body {
 .layout::-webkit-scrollbar {
   display: none;
 }
-.card_layout{
+.card-layout{
   width:30%;
   margin: 1%;
-  cursor:hand;
+  cursor: pointer;
 }

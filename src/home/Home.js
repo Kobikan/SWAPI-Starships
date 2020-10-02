@@ -14,7 +14,7 @@ function Home() {
         }
       }
     }
-    `; 
+    `;
 
     const {loading, error, data} = useQuery(starships);
     if(loading) return (<div/>);
@@ -28,7 +28,7 @@ function Home() {
                     const key = logos[starship.name] ? logos[starship.name] : 'unknown';
                     const temp = '3.png';
                     return(
-                        <div className="card_layout card" onClick = {() => {
+                        <div className="card-layout card" onClick = {() => {
                             history.push(`/${starship.id}`);
                         }}>
                             <img src={require(`../assets/${temp}`)} alt="Card image cap " className="card-img-top"/>
