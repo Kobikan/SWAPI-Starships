@@ -17,7 +17,18 @@ body {
   top: 0;
   left: 0;
 }
+.home{
 
-.card-ship{
-  width: '18 px';
+}
+.container{
+  display: flex;
+  overflow-y:scroll;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 99vh;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.card_layout{
 }
